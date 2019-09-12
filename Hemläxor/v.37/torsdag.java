@@ -41,19 +41,7 @@ public class torsdag {
 	String str6 = input.nextLine();
 	System.out.println(str6);
 	
-	Vad heter du? Ester Isacson
-	Hur gammal är du? 17
-	Vad är din address? Bosgårdsgatan 36
-	Vilket är ditt postnumer? 431 42
-	Vilken stad bor du i? Mölndal
-	Vad är ditt telefonnummer? 0725067888
-			
-	Information:
-	Namn: Ester Isacson
-	Ålder: 17 år
-	Adress: Bosgårdsgatan 36
-			431 42 Mölndal
-	Telefon: 0725067888
+	
 	}
 	
 	
