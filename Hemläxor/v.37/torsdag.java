@@ -11,7 +11,11 @@ public class torsdag {
 	String str = input.nextLine();
 	System.out.println(str);
 	
+	Scanner input1 = new Scanner (System.in);
+	System.out.println("Hur gammal är du?");
 	
+	String str2 = input1.nextLine();
+	System.out.println(str2);
 	
 	}
 	
