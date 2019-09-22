@@ -115,7 +115,8 @@ public class v38 {
 			min = siffra10;
 		}
 		
-System.out.println((siffra1+siffra2+siffra3+siffra4+siffra5+siffra6+siffra7+siffra8+siffra9+siffra10)/10);
-		
+		System.out.println((siffra1+siffra2+siffra3+siffra4+siffra5+siffra6+siffra7+siffra8+siffra9+siffra10)/10);
+		System.out.println(min);
+		System.out.println(max);
 	}
 }
