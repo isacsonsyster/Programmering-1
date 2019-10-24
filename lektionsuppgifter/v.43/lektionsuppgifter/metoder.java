@@ -1,27 +1,33 @@
 package lektionsuppgifter;
 
-public class metoder {
-public static void main (String [] args) {
-	lol("HAHHAHAHAHAH");
-	
-	System.out.println(min(2,6));
-}
+import java.util.Scanner;
 
-public static int lol(String hej) {
- System.out.println(hej);
-}
-int min(int i, int j);{
-	if (i <= j) {
-		return i;
+public class metoder {
+	public static void main (String [] args) {
+		lol("HAHHAHAHAHAH");
+		
+		Scanner input =new Scanner(System.in);
+		
+		System.out.println("skriv in två heltal: ");
+		int i = input.nextInt();
+		int j = input.nextInt();
+		
 	}
-	else if (j <= i) {
+
+	public static void lol(String hej) {
+	 System.out.println(hej);
+	}
+	public static int min(int i, int j){
+		
+		if (i <= j) {
+			return i;
+		}
+		else if (j <= i) {
+				return j;
+			}
+		else {
 			return j;
 		}
-	else {
-		return j;
-	}
-}
-
-	 
+	} 
 }
 
