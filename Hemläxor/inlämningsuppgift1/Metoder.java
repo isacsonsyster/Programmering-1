@@ -17,9 +17,9 @@ public class Metoder {
 		return fahrenheitToCelcius;
 	}
 	/**	
-	 * metoden räknar ut celcius från Kelvin 
-	 * @param kelvin värdet i kelvin
-	 * @return värdet i celcius 
+	 * the method calculate celcius from Kelvin 
+	 * @param kelvin the value in kelvin
+	 * @return the value in celcius 
 	 */
 	public static double kelvinToCelcius(double kelvin) {
 		double kelvinToCelcius = kelvin - 273.15;
