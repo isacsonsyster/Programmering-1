@@ -26,10 +26,10 @@ public class Metoder {
 		return kelvinToCelcius;
 	}
 	/**
-	 * metoden räknar ut trycket för en vätska i FluidTable på ett visst djup
-	 * @param fluid är en vätska ur FluidTable
-	 * @param deep är djupet trycket är på
-	 * @return värdet för tryck på ett visst djup
+	 * the method calculate the pressure for a Fluid in FluidTable on a certain deep
+	 * @param fluid is a fluid from FluidTable
+	 * @param deep is the deep for the pressure
+	 * @return the value for the pressure on a certain deep
 	 */
 	public static double fluidPressure(FluidTable fluid, double deep) {
 		double fluidPressure = fluid.density*9.82*deep;
