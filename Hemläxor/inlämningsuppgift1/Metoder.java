@@ -131,7 +131,10 @@ public class Metoder {
 		return volumeToMass;	
 	}
 	
-	public static double 
+	public static double svtVelocity(double distance, double time) {
+		double svtVelocity = distance-time;
+		return svtVelocity;
+	}
 
 
 	
