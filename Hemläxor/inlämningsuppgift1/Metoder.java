@@ -92,12 +92,18 @@ public class Metoder {
 	 * the method calculate the mass of a fluid from the Fluidtable
 	 * @param fluid is the fluid we calculate the mass of
 	 * @param volume is the volume of the fluid we calculate with, measured in cm^3
-	 * @return the mass of the fluid. 
+	 * @return the mass of the fluid measured in gram
 	 */
 	public static double volumeToMass(FluidTable fluid, double volume) {
 		double volumeToMass = fluid.density*volume;
 		return volumeToMass;
 	}
+	/**
+	 * the method calculate the mass of a gas from the gastable
+	 * @param gas is the gas we calculate the mass from
+	 * @param volume is the volume of the gas we calculate with, measured in cm^3
+	 * @return the mass of the gas measured in gram
+	 */
 	public static double volumeToMass(GasTable gas, double volume){
 		double volumeToMass = gas.density*volume;
 		return volumeToMass;	
