@@ -132,7 +132,7 @@ public class Metoder {
 	}
 	
 	/**
-	 * the method calculate the average speed with distance and time
+	 * the method calculate the average velocity with distance and time
 	 * @param distance is how long it went measured in meter
 	 * @param time is how long it has went, measured in seconds
 	 * @return the average speed, measured in meter per seconds
@@ -142,6 +142,12 @@ public class Metoder {
 		return svtVelocity;
 	}
 	
+	/**
+	 * the method calculate the distance with velocity and time 
+	 * @param velocity is the how fast it went, measured in meter per seconds
+	 * @param time is how long it has went, measured in seconds
+	 * @return the distance, measured in meter
+	 */
 	public static double svtDistance(double velocity, double time) {
 		double svtDistance = velocity*time;
 		return svtDistance;
