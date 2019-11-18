@@ -60,6 +60,11 @@ public class Metoder {
 		double potentialEnergy = mass*9.82*height;
 		return potentialEnergy;
 	}
+	/**
+	 * the method calculate the velocity the object has if you drop it from a certain height
+	 * @param height is the height the object is dropped from measured in meter
+	 * @return the value of the velocity the object has, measured in m/s
+	 */
 	public static double fallSpeed(double height) {
 		double fallSpeed = Math.pow((height*2)/9.82), 2)*9.82;
 		return fallSpeed;
