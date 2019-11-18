@@ -51,6 +51,12 @@ public class Metoder {
 		double kineticEnergy = (mass* Math.pow(velocity, 2))/2;
 		return kineticEnergy;
 	}
+	/**
+	 * the method calculate the potential energy for a object with mass and height
+	 * @param mass is the mass for the object measured in kilogram
+	 * @param height is the height for the object measured in meter
+	 * @return the value for the potential energy for a object measured in Joule
+	 */
 	public static double potentialEnergy(double mass, double height) {
 		double potentialEnergy = mass*9.82*height;
 		return potentialEnergy;
