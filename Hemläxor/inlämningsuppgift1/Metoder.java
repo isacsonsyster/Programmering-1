@@ -1,4 +1,5 @@
 import enums.FluidTable;
+import enums.GasTable;
 
 public class Metoder {
 	
@@ -9,7 +10,7 @@ public class Metoder {
 	static double R = 8.3145;
 	
 	public static void main(String [] args) {
-		System.out.println(delta(5,1));
+		System.out.println(volumeToMass(GasTable.AIR,1));
 	}
 	/**
 	 * the method calculate Fahrenheit to celcius 
@@ -97,7 +98,12 @@ public class Metoder {
 		double volumeToMass = fluid.density*volume;
 		return volumeToMass;
 	}
+	public static double volumeToMass(GasTable gas, double volume){
+		double volumeToMass = gas.density*volume;
+		return volumeToMass;	
+		}
 
+	
 		
 }
 
