@@ -1,7 +1,15 @@
 import enums.FluidTable;
 
 public class Metoder {
+	
+	static double g_swe = 9.82;
+	static double c = Math.pow(10, 2)* 2.99792458;
+	static double G = Math.pow(10, -11) * 6.674;
+	static double p_0 = 1000;
+	static double R = 8.3145;
+	
 	public static void main(String [] args) {
+		System.out.println(fallSpeed(2.5));
 	}
 	/**
 	 * the method calculate Fahrenheit to celcius 
@@ -28,7 +36,7 @@ public class Metoder {
 	 * @return the value for the pressure on a certain deep in measured in Pascal
 	 */
 	public static double fluidPressure(FluidTable fluid, double deep) {
-		double fluidPressure = fluid.density*9.82*deep;
+		double fluidPressure = fluid.density*g_swe*deep;
 		return fluidPressure;
 	}
 	/**
@@ -37,7 +45,7 @@ public class Metoder {
 	 * @return the value for the water pressure on a certain deep measured in Pascal
 	 */
 	public static double pressureUnderWater(double deep) {
-		double pressureUnderWater = FluidTable.WATER.density*9.82*deep;
+		double pressureUnderWater = FluidTable.WATER.density*g_swe*deep;
 		return pressureUnderWater;	
 	}
 	/**
@@ -57,7 +65,7 @@ public class Metoder {
 	 * @return the value for the potential energy for a object measured in Joule
 	 */
 	public static double potentialEnergy(double mass, double height) {
-		double potentialEnergy = mass*9.82*height;
+		double potentialEnergy = mass*g_swe*height;
 		return potentialEnergy;
 	}
 	/**
@@ -66,7 +74,7 @@ public class Metoder {
 	 * @return the value of the velocity the object has, measured in m/s
 	 */
 	public static double fallSpeed(double height) {
-		double fallSpeed = Math.pow((height*2)/9.82), 2)*9.82;
+		double fallSpeed = Math.sqrt((2*height) / g_swe) * g_swe;
 		return fallSpeed;
 	}
 		
