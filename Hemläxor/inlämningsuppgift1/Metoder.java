@@ -11,7 +11,8 @@ public class Metoder {
 	static double R = 8.3145;
 	
 	public static void main(String [] args) {
-		System.out.println(volumeToMass(GasTable.AIR,1));
+		System.out.println (volumeToMass(SolidTable.IRON, 1));
+		
 	}
 	/**
 	 * the method calculate Fahrenheit to celcius 
@@ -22,6 +23,7 @@ public class Metoder {
 		double fahrenheitToCelcius = (fahrenheit-32) * 5/(9); 
 		return fahrenheitToCelcius;
 	}
+	
 	/**	
 	 * the method calculate celcius from Kelvin 
 	 * @param kelvin the value in kelvin
@@ -31,6 +33,7 @@ public class Metoder {
 		double kelvinToCelcius = kelvin - 273.15;
 		return kelvinToCelcius;
 	}
+	
 	/**
 	 * the method calculate the pressure for a Fluid in FluidTable on a certain deep
 	 * @param fluid is a fluid from FluidTable
@@ -41,6 +44,7 @@ public class Metoder {
 		double fluidPressure = fluid.density*g_swe*deep;
 		return fluidPressure;
 	}
+	
 	/**
 	 * the method calculate the pressure for Water on a certain deep. 
 	 * @param deep is the deep for the pressure under water measured in meter
@@ -50,6 +54,7 @@ public class Metoder {
 		double pressureUnderWater = FluidTable.WATER.density*g_swe*deep;
 		return pressureUnderWater;	
 	}
+	
 	/**
 	 * the method calculate the kinetic energy for a object with mass and velocity
 	 * @param mass is the mass for the object measured in kilogram
@@ -60,6 +65,7 @@ public class Metoder {
 		double kineticEnergy = (mass* Math.pow(velocity, 2))/2;
 		return kineticEnergy;
 	}
+	
 	/**
 	 * the method calculate the potential energy for a object with mass and height
 	 * @param mass is the mass for the object measured in kilogram
@@ -70,6 +76,7 @@ public class Metoder {
 		double potentialEnergy = mass*g_swe*height;
 		return potentialEnergy;
 	}
+	
 	/**
 	 * the method calculate the velocity the object has if you drop it from a certain height
 	 * @param height is the height the object is dropped from measured in meter
@@ -79,6 +86,7 @@ public class Metoder {
 		double fallSpeed = Math.sqrt((2*height) / g_swe) * g_swe;
 		return fallSpeed;
 	}
+	
 	/**
 	 * the method calculate the delta (difference) between two numbers
 	 * @param first is the first number
@@ -89,9 +97,10 @@ public class Metoder {
 		double delta = last-first;
 		return delta; 
 	}
+	
 	/**
 	 * the method calculate the mass of a fluid from the Fluidtable
-	 * @param fluid is the fluid we calculate the mass of
+	 * @param fluid is a fluid from the fluidtable we calculate the mass of
 	 * @param volume is the volume of the fluid we calculate with, measured in cm^3
 	 * @return the mass of the fluid measured in gram
 	 */
@@ -102,19 +111,27 @@ public class Metoder {
 	
 	/**
 	 * the method calculate the mass of a gas from the gastable
-	 * @param gas is the gas we calculate the mass from
+	 * @param gas is the gas from the gastable we calculate the mass on
 	 * @param volume is the volume of the gas we calculate with, measured in cm^3
 	 * @return the mass of the gas measured in gram
 	 */
 	public static double volumeToMass(GasTable gas, double volume){
 		double volumeToMass = gas.density*volume;
 		return volumeToMass;	
-		}
+	}
 	
+	/**
+	 * the method calculate the mass of a solid from the solidtable
+	 * @param solid is a solid from the solidtable we calculate the mass on
+	 * @param volume is the volume o the solid we calculate with, measuerd in cm^3 
+	 * @return the mass of the solid, measured in gram
+	 */
 	public static double volumeToMass(SolidTable solid, double volume) {
 		double volumeToMass = solid.density*volume;
 		return volumeToMass;	
-		}
+	}
+	
+	public static double 
 
 
 	
