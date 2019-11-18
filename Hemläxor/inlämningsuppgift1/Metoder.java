@@ -4,7 +4,6 @@ public class Metoder {
 	public static void main(String [] args) {
 		
 	
-	
 	}
 	/**
 	 * the method calculate Fahrenheit to celcius 
@@ -41,8 +40,11 @@ public class Metoder {
 	 */
 	public static double pressureUnderWater(double deep) {
 		double pressureUnderWater = FluidTable.WATER.density*9.82*deep;
-		return pressureUnderWater;
-		
+		return pressureUnderWater;	
+	}
+	public static double kineticEnergy(double mass, double velocity) {
+		double kineticEnergy = (mass* Math.pow(velocity, 2))/2;
+		return kineticEnergy;
 	}
 		
 }
