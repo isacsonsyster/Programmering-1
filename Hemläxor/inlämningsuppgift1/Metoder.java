@@ -87,7 +87,11 @@ public class Metoder {
 		double delta = last-first;
 		return delta; 
 	}
-	
+	public static double volumeToMass(FluidTable fluid, double volume) {
+		double volumeToMass = fluid.density*volume;
+		return volumeToMass;
+	}
+
 		
 }
 
