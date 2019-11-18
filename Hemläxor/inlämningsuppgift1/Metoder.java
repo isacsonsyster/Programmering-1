@@ -87,6 +87,7 @@ public class Metoder {
 		double delta = last-first;
 		return delta; 
 	}
+	
 		
 }
 
