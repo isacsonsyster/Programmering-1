@@ -1,5 +1,6 @@
 import enums.FluidTable;
 import enums.GasTable;
+import enums.SolidTable;
 
 public class Metoder {
 	
@@ -98,6 +99,7 @@ public class Metoder {
 		double volumeToMass = fluid.density*volume;
 		return volumeToMass;
 	}
+	
 	/**
 	 * the method calculate the mass of a gas from the gastable
 	 * @param gas is the gas we calculate the mass from
@@ -108,6 +110,12 @@ public class Metoder {
 		double volumeToMass = gas.density*volume;
 		return volumeToMass;	
 		}
+	
+	public static double volumeToMass(SolidTable solid, double volume) {
+		double volumeToMass = solid.density*volume;
+		return volumeToMass;	
+		}
+
 
 	
 		
