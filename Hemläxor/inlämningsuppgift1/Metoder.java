@@ -3,7 +3,6 @@ import enums.FluidTable;
 public class Metoder {
 	public static void main(String [] args) {
 		
-		
 	
 	
 	}
@@ -34,6 +33,11 @@ public class Metoder {
 	public static double fluidPressure(FluidTable fluid, double deep) {
 		double fluidPressure = fluid.density*9.82*deep;
 		return fluidPressure;
+	}
+	public static double pressureUnderWater(double deep) {
+		double pressureUnderWater = FluidTable.WATER.density*9.82*deep;
+		return pressureUnderWater;
+		
 	}
 		
 }
