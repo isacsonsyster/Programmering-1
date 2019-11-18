@@ -87,6 +87,12 @@ public class Metoder {
 		double delta = last-first;
 		return delta; 
 	}
+	/**
+	 * the method calculate the mass of a fluid from the Fluidtable
+	 * @param fluid is the fluid we calculate the mass of
+	 * @param volume is the volume of the fluid we calculate with, measured in cm^3
+	 * @return the mass of the fluid. 
+	 */
 	public static double volumeToMass(FluidTable fluid, double volume) {
 		double volumeToMass = fluid.density*volume;
 		return volumeToMass;
