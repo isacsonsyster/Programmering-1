@@ -11,7 +11,7 @@ public class Metoder {
 	static double R = 8.3145;
 	
 	public static void main(String [] args) {
-		System.out.println (volumeToMass(SolidTable.IRON, 1));
+		System.out.println (svtVelocity(10,5));
 		
 	}
 	/**
@@ -138,9 +138,15 @@ public class Metoder {
 	 * @return the average speed, measured in meter per seconds
 	 */
 	public static double svtVelocity(double distance, double time) {
-		double svtVelocity = distance-time;
+		double svtVelocity = distance/time;
 		return svtVelocity;
 	}
+	
+	public static double svtDistance(double velocity, double time) {
+		double svtDistance = velocity*time;
+		return svtDistance;
+	}
+
 
 
 	
