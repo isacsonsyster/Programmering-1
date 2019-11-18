@@ -34,6 +34,11 @@ public class Metoder {
 		double fluidPressure = fluid.density*9.82*deep;
 		return fluidPressure;
 	}
+	/**
+	 * the method calculate the pressure for Water on a certain deep. 
+	 * @param deep is the deep for the pressure under water
+	 * @return the value for the water pressure on a certain deep
+	 */
 	public static double pressureUnderWater(double deep) {
 		double pressureUnderWater = FluidTable.WATER.density*9.82*deep;
 		return pressureUnderWater;
