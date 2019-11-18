@@ -3,7 +3,6 @@ import enums.FluidTable;
 public class Metoder {
 	public static void main(String [] args) {
 		
-	System.out.println(kineticEnergy(2,2));
 	}
 	/**
 	 * the method calculate Fahrenheit to celcius 
@@ -43,7 +42,7 @@ public class Metoder {
 		return pressureUnderWater;	
 	}
 	/**
-	 * the method calculate the kinetic energy for a object
+	 * the method calculate the kinetic energy for a object with mass and velocity
 	 * @param mass is the mass for the object measured in kilogram
 	 * @param velocity is the velocity for the object measured in meter per second 
 	 * @return the value for the kinetic energy for a object measured in Joule
@@ -51,6 +50,10 @@ public class Metoder {
 	public static double kineticEnergy(double mass, double velocity) {
 		double kineticEnergy = (mass* Math.pow(velocity, 2))/2;
 		return kineticEnergy;
+	}
+	public static double potentialEnergy(double mass, double height) {
+		double potentialEnergy = mass*9.82*height;
+		return potentialEnergy;
 	}
 		
 }
