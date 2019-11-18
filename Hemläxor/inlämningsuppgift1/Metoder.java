@@ -11,7 +11,7 @@ public class Metoder {
 	static double R = 8.3145;
 	
 	public static void main(String [] args) {
-		System.out.println (svtVelocity(10,5));
+		System.out.println (svtDistance(10,5));
 		
 	}
 	/**
@@ -151,6 +151,11 @@ public class Metoder {
 	public static double svtDistance(double velocity, double time) {
 		double svtDistance = velocity*time;
 		return svtDistance;
+	}
+	
+	public static double svtTime(double distance, double velocity){
+		double svtTime = velocity/distance;
+		return svtTime;
 	}
 
 
