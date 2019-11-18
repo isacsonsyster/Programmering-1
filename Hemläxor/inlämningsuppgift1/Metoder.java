@@ -3,7 +3,7 @@ import enums.FluidTable;
 public class Metoder {
 	public static void main(String [] args) {
 		
-	
+	System.out.println(kineticEnergy(2,2));
 	}
 	/**
 	 * the method calculate Fahrenheit to celcius 
@@ -26,8 +26,8 @@ public class Metoder {
 	/**
 	 * the method calculate the pressure for a Fluid in FluidTable on a certain deep
 	 * @param fluid is a fluid from FluidTable
-	 * @param deep is the deep for the pressure
-	 * @return the value for the pressure on a certain deep
+	 * @param deep is the deep for the pressure measured in meter
+	 * @return the value for the pressure on a certain deep in measured in Pascal
 	 */
 	public static double fluidPressure(FluidTable fluid, double deep) {
 		double fluidPressure = fluid.density*9.82*deep;
@@ -35,13 +35,19 @@ public class Metoder {
 	}
 	/**
 	 * the method calculate the pressure for Water on a certain deep. 
-	 * @param deep is the deep for the pressure under water
-	 * @return the value for the water pressure on a certain deep
+	 * @param deep is the deep for the pressure under water measured in meter
+	 * @return the value for the water pressure on a certain deep measured in Pascal
 	 */
 	public static double pressureUnderWater(double deep) {
 		double pressureUnderWater = FluidTable.WATER.density*9.82*deep;
 		return pressureUnderWater;	
 	}
+	/**
+	 * the method calculate the kinetic energy for a object
+	 * @param mass is the mass for the object measured in kilogram
+	 * @param velocity is the velocity for the object measured in meter per second 
+	 * @return the value for the kinetic energy for a object measured in Joule
+	 */
 	public static double kineticEnergy(double mass, double velocity) {
 		double kineticEnergy = (mass* Math.pow(velocity, 2))/2;
 		return kineticEnergy;
