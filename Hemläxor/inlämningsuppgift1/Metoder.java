@@ -2,7 +2,6 @@ import enums.FluidTable;
 
 public class Metoder {
 	public static void main(String [] args) {
-		
 	}
 	/**
 	 * the method calculate Fahrenheit to celcius 
@@ -60,6 +59,10 @@ public class Metoder {
 	public static double potentialEnergy(double mass, double height) {
 		double potentialEnergy = mass*9.82*height;
 		return potentialEnergy;
+	}
+	public static double fallSpeed(double height) {
+		double fallSpeed = Math.pow((height*2)/9.82), 2)*9.82;
+		return fallSpeed;
 	}
 		
 }
