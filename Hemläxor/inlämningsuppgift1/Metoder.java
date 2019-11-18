@@ -9,7 +9,7 @@ public class Metoder {
 	static double R = 8.3145;
 	
 	public static void main(String [] args) {
-		System.out.println(fallSpeed(2.5));
+		System.out.println(delta(5,1));
 	}
 	/**
 	 * the method calculate Fahrenheit to celcius 
@@ -76,6 +76,10 @@ public class Metoder {
 	public static double fallSpeed(double height) {
 		double fallSpeed = Math.sqrt((2*height) / g_swe) * g_swe;
 		return fallSpeed;
+	}
+	public static double delta (double first, double last) {
+		double delta = last-first;
+		return delta; 
 	}
 		
 }
