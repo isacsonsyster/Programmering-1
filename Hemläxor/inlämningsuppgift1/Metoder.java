@@ -77,6 +77,12 @@ public class Metoder {
 		double fallSpeed = Math.sqrt((2*height) / g_swe) * g_swe;
 		return fallSpeed;
 	}
+	/**
+	 * the method calculate the delta (difference) between two numbers
+	 * @param first is the first number
+	 * @param last is the last number 
+	 * @return the delta (difference) between the two numbers
+	 */
 	public static double delta (double first, double last) {
 		double delta = last-first;
 		return delta; 
