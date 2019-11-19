@@ -222,7 +222,11 @@ public class Metoder {
 		return heat;	
 	}
 	
-	
+	/**
+	 * the method calculate how high something comes when it is thrown straight up (90 grades)
+	 * @param velocity is the velocity we throw it, measured in m/s
+	 * @return the value of how high it came, measured in meter
+	 */
 	public static double velocityToHeight(double velocity) {
 		double velocityToHeight = Math.pow(velocity, 2)/(2*g_swe);
 		return velocityToHeight;
