@@ -11,7 +11,7 @@ public class Metoder {
 	static double R = 8.3145;
 	
 	public static void main(String [] args) {
-		System.out.println (heat(FluidTable.WATER,1,10) );
+		System.out.println (heat(GasTable.AIR,1,1) );
 		
 	}
 	/**
@@ -209,7 +209,13 @@ public class Metoder {
 		double heat = fluid.heatCapacity*mass*deltaT;
 		return heat;	
 	}
-	
+	/**
+	 * the method calculate the energy it takes to heat a gas from the gastable with mass and temperature change
+	 * @param gas is a randomly chosen gas from the gastable
+	 * @param mass is the mass of the fluid, measured in kilogram
+	 * @param deltaT is the temperature change, measured in Kelvin
+	 * @return the value of the amount of energy, measured in Joule 
+	 */
 	public static double heat(GasTable gas, double mass, double deltaT) {
 		double heat = gas.heatCapacity*mass*deltaT;
 		return heat;	
