@@ -11,7 +11,7 @@ public class Metoder {
 	static double R = 8.3145;
 	
 	public static void main(String [] args) {
-		System.out.println (heat(GasTable.AIR,1,1) );
+		System.out.println (velocityToHeight(9.82));
 		
 	}
 	/**
@@ -224,7 +224,7 @@ public class Metoder {
 	
 	
 	public static double velocityToHeight(double velocity) {
-		double velocityToHeight = velocity/(2*g_swe);
+		double velocityToHeight = Math.pow(velocity, 2)/(2*g_swe);
 		return velocityToHeight;
 	}
 
