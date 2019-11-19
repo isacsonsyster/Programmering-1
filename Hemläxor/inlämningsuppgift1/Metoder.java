@@ -11,7 +11,7 @@ public class Metoder {
 	static double R = 8.3145;
 	
 	public static void main(String [] args) {
-		System.out.println (work(50,10));
+		System.out.println (power(1000,2));
 		
 	}
 	/**
@@ -175,6 +175,12 @@ public class Metoder {
 		return work;	
 	}
 	
+	/**
+	 * the method calculate the power with work and time
+	 * @param work is work we use, measured in Newtonmeter or Joule (same thing)
+	 * @param time is how long it takes, measured in seconds
+	 * @return the value of power, measured in Newton
+	 */
 	public static double power(double work, double time){
 		double power = work/time;
 		return power;
