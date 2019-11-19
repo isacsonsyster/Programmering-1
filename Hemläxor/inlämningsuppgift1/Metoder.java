@@ -164,7 +164,14 @@ public class Metoder {
 		return svtTime;
 	}
 
+	public static double work(double force, double distance){
+		double work = force*distance;
+		return work;
+		
+	}
 
+
+	
 
 	
 		
