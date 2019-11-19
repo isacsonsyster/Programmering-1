@@ -187,17 +187,24 @@ public class Metoder {
 	}
 	
 	/**
-	 * the method calculate the energy it takes to heat a solid from the solidtable
+	 * the method calculate the energy it takes to heat a solid from the solidtable with mass and temperature change
 	 * @param solid is a randomly chosen solid from the solidtable 
-	 * @param mass is the mass of the solid
-	 * @param deltaT is the temperature change
-	 * @return the value of the amount of energy
+	 * @param mass is the mass of the solid, measured in kilogram
+	 * @param deltaT is the temperature change, measured in Kelvin
+	 * @return the value of the amount of energy, measured in Joule
 	 */
 	public static double heat(SolidTable solid, double mass, double deltaT) {
 		double heat = solid.heatCapacity*mass*deltaT;
 		return heat;
 	}
 	
+	/**
+	 * the method calculate the energy it takes to heat a fluid from the fluidtable with mass and temperature change
+	 * @param fluid is a randomly chosen fluid from the fluidtable 
+	 * @param mass is the mass of the fluid, measured in kilogram
+	 * @param deltaT is the temperature change, measured in Kelvin
+	 * @return the value of the amount of energy, measured in Joule 
+	 */
 	public static double heat(FluidTable fluid, double mass, double deltaT) {
 		double heat = fluid.heatCapacity*mass*deltaT;
 		return heat;	
