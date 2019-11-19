@@ -209,14 +209,11 @@ public class Metoder {
 		double heat = fluid.heatCapacity*mass*deltaT;
 		return heat;	
 	}
-
-
-
-
-
 	
-
-	
+	public static double heat(GasTable gas, double mass, double deltaT) {
+		double heat = gas.heatCapacity*mass*deltaT;
+		return heat;	
+	}
 		
 }
 
