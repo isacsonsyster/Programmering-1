@@ -209,6 +209,7 @@ public class Metoder {
 		double heat = fluid.heatCapacity*mass*deltaT;
 		return heat;	
 	}
+	
 	/**
 	 * the method calculate the energy it takes to heat a gas from the gastable with mass and temperature change
 	 * @param gas is a randomly chosen gas from the gastable
@@ -220,6 +221,13 @@ public class Metoder {
 		double heat = gas.heatCapacity*mass*deltaT;
 		return heat;	
 	}
+	
+	
+	public static double velocityToHeight(double velocity) {
+		double velocityToHeight = velocity/(2*g_swe);
+		return velocityToHeight;
+	}
+
 		
 }
 
