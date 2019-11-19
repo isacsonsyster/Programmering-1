@@ -11,8 +11,9 @@ public class Metoder {
 	static double R = 8.3145;
 	
 	public static void main(String [] args) {
-		System.out.println (velocityToHeight(9.82));
-		
+		System.out.println (volumeToMass(SolidTable.IRON, 60000));
+		System.out.println(svtDistance(2.7, 3000));
+		System.out.println(heat(FluidTable.WATER, 4, 78));
 	}
 	/**
 	 * the method calculate Fahrenheit to celcius 
