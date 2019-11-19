@@ -11,7 +11,7 @@ public class Metoder {
 	static double R = 8.3145;
 	
 	public static void main(String [] args) {
-		System.out.println (power(1000,2));
+		System.out.println (heat(SolidTable.IRON,1,2));
 		
 	}
 	/**
@@ -185,7 +185,13 @@ public class Metoder {
 		double power = work/time;
 		return power;
 	}
-	
+	/**
+	 * the method calculate the energy it takes to heat a solid from the solidtable
+	 * @param solid is a randomly chosen solid from the solidtable 
+	 * @param mass is the mass of the solid
+	 * @param deltaT is the temperature change
+	 * @return the value of the amount of energy
+	 */
 	public static double heat(SolidTable solid, double mass, double deltaT) {
 		double heat = solid.heatCapacity*mass*deltaT;
 		return heat;
