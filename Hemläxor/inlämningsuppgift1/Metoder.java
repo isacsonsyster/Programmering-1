@@ -11,7 +11,7 @@ public class Metoder {
 	static double R = 8.3145;
 	
 	public static void main(String [] args) {
-		System.out.println (svtTime(10,2));
+		System.out.println (work(50,10));
 		
 	}
 	/**
@@ -163,7 +163,12 @@ public class Metoder {
 		double svtTime = distance/velocity;
 		return svtTime;
 	}
-
+	/**
+	 * the method calculate work with distance and force
+	 * @param force is the force we use measured in Newton
+	 * @param distance is how far we go, measured in meter
+	 * @return the value of work, measured in Newtonmeter or Joule (same thing) 
+	 */
 	public static double work(double force, double distance){
 		double work = force*distance;
 		return work;
