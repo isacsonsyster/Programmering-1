@@ -14,6 +14,8 @@ public class Metoder {
 		System.out.println (volumeToMass(SolidTable.IRON, 60000));
 		System.out.println(svtDistance(2.7, 3000));
 		System.out.println(heat(FluidTable.WATER, 4, 78));
+		System.out.println(pressureUnderWater(75));
+		System.out.println();
 	}
 	/**
 	 * the method calculate Fahrenheit to celcius 
