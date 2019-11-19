@@ -184,8 +184,13 @@ public class Metoder {
 	public static double power(double work, double time){
 		double power = work/time;
 		return power;
-		
 	}
+	
+	public static double heat(SolidTable solid, double mass, double deltaT) {
+		double heat = solid.heatCapacity*mass*deltaT;
+		return heat;
+	}
+
 
 
 
