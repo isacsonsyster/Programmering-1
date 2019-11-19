@@ -163,6 +163,7 @@ public class Metoder {
 		double svtTime = distance/velocity;
 		return svtTime;
 	}
+	
 	/**
 	 * the method calculate work with distance and force
 	 * @param force is the force we use measured in Newton
@@ -171,9 +172,15 @@ public class Metoder {
 	 */
 	public static double work(double force, double distance){
 		double work = force*distance;
-		return work;
+		return work;	
+	}
+	
+	public static double power(double work, double time){
+		double power = work/time;
+		return power;
 		
 	}
+
 
 
 	
