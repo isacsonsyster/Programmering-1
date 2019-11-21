@@ -15,7 +15,9 @@ public class Metoder {
 		System.out.println(svtDistance(2.7, 3000));
 		System.out.println(heat(FluidTable.WATER, 4, 78));
 		System.out.println(pressureUnderWater(75));
-		System.out.println();
+		System.out.println(velocityToHeight(16.67));
+		double work = (kineticEnergy(735, 27.78));
+		System.out.println(power (work, 4.8));
 	}
 	/**
 	 * the method calculate Fahrenheit to celcius 
@@ -182,7 +184,7 @@ public class Metoder {
 	 * the method calculate the power with work and time
 	 * @param work is work we use, measured in Newtonmeter or Joule (same thing)
 	 * @param time is how long it takes, measured in seconds
-	 * @return the value of power, measured in Newton
+	 * @return the value of power, measured in Watt or Joule per second (same thing)
 	 */
 	public static double power(double work, double time){
 		double power = work/time;
@@ -227,7 +229,7 @@ public class Metoder {
 	
 	/**
 	 * the method calculate how high something comes when it is thrown straight up (90 grades)
-	 * @param velocity is the velocity we throw it, measured in m/s
+	 * @param velocity is the velocity we throw it with, measured in m/s
 	 * @return the value of how high it came, measured in meter
 	 */
 	public static double velocityToHeight(double velocity) {
