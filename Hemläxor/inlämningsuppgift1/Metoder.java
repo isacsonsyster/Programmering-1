@@ -239,19 +239,31 @@ public class Metoder {
 	}
 	
 	/**
-	 * the method calculate how fast something goes with acceleration and time, aside from the initial speed. 
-	 * @param acceleration is how much it accelerates, measured in m/s^2
+	 * the method calculate how fast something goes with acceleration and time, aside from the initial speed. (initial speed=0)
+	 * @param velocity
+	 * @param acceleration is how much it accelerates, measured in meter per cubic seconds
 	 * @param time is how long it is, measured in seconds. 
-	 * @return the velocity of how fast something has went. 
+	 * @return the velocity of how fast something has went, measured in meter per seconds 
 	 */
 	public static double accelerationToVelocity(double acceleration, double time) {
 		double accelerationToVelocity = acceleration*time;
 		return accelerationToVelocity;
 	}
 	
+	/**
+	 * the method calculate how much something accelerates with time and velocity, aside from initial speed. (initial speed=0)
+	 * @param velocity is how fast it goes, measured in meter per seconds
+	 * @param time is how long it takes, measured in seconds
+	 * @return the value in acceleration, measured in meter per cubic seconds. 
+	 */
 	public static double velocityToAcceleration(double velocity, double time) {
 		double velocityToAcceleration = velocity/time;
 		return velocityToAcceleration;
+	}
+	
+	public static double friction(double frictionCoefficient, double normalForce) {
+		double friction = frictionCoefficient*normalForce;
+		return friction;
 	}
 	
 	
