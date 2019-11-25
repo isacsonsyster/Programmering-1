@@ -18,6 +18,7 @@ public class Metoder {
 		System.out.println(velocityToHeight(16.67));
 		double work = (kineticEnergy(735, 27.78));
 		System.out.println(power (work, 4.8));
+		System.out.println();
 	}
 	/**
 	 * the method calculate Fahrenheit to celcius 
@@ -236,6 +237,24 @@ public class Metoder {
 		double velocityToHeight = Math.pow(velocity, 2)/(2*g_swe);
 		return velocityToHeight;
 	}
+	
+	/**
+	 * the method calculate how fast something goes with acceleration and time, aside from the initial speed. 
+	 * @param acceleration is how much it accelerates, measured in m/s^2
+	 * @param time is how long it is, measured in seconds. 
+	 * @return the velocity of how fast something has went. 
+	 */
+	public static double accelerationToVelocity(double acceleration, double time) {
+		double accelerationToVelocity = acceleration*time;
+		return accelerationToVelocity;
+	}
+	
+	public static double velocityToAcceleration(double velocity, double time) {
+		double velocityToAcceleration = velocity/time;
+		return velocityToAcceleration;
+	}
+	
+	
 
 		
 }
