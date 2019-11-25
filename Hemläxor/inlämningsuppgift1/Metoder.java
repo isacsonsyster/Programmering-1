@@ -273,6 +273,11 @@ public class Metoder {
 	}
 	
 	
+	public static double frictionCoefficient(double friction, double normalForce) {
+		double frictionCoefficient = friction/normalForce;
+		return frictionCoefficient;
+	}
+	
 	
 
 		
