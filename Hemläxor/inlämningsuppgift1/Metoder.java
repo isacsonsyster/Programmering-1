@@ -272,7 +272,12 @@ public class Metoder {
 		return friction;
 	}
 	
-	
+	/**
+	 * the method calculates how much friction something has
+	 * @param friction is how much resistance to the friction there is, measured in Newton
+	 * @param normalForce is the force that eliminate the gravity force, measured in Newton
+	 * @return how much friction there is, has no unit 
+	 */
 	public static double frictionCoefficient(double friction, double normalForce) {
 		double frictionCoefficient = friction/normalForce;
 		return frictionCoefficient;
