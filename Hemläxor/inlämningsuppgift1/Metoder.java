@@ -261,10 +261,17 @@ public class Metoder {
 		return velocityToAcceleration;
 	}
 	
+	/**
+	 * the method calculate the friction with the friction coefficient and normal force, measured in Newton
+	 * @param frictionCoefficient is how much friction it is, has no unit 
+	 * @param normalForce is the force that eliminate the gravity force, measured in Newton
+	 * @return the value in friction, measured in Newton
+	 */
 	public static double friction(double frictionCoefficient, double normalForce) {
 		double friction = frictionCoefficient*normalForce;
 		return friction;
 	}
+	
 	
 	
 
