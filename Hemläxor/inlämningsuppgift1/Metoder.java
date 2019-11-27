@@ -309,10 +309,15 @@ public class Metoder {
 		return accelerationToDistance;
 	}
 	
+	/**
+	 * the method calculates Hookes law, which is the force it takes to extend and/or compress a spring. 
+	 * @param springCoefficient is the coefficient. This is how "hard" it is to extend it. measured in 	Newton per meter ((N/m) ((kg*m^2)/m)
+	 * @param springExtension is the distance it is extend, measured in meter
+	 * @return the value in force, measured in Newton ((kg*m)/2)
+	 */
 	public static double hookesLaw(double springCoefficient, double springExtension) {
 		double hookesLaw = springCoefficient*springExtension;
-		return hookesLaw;
-		
+		return hookesLaw;	
 	}
 	
 	
