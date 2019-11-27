@@ -331,6 +331,11 @@ public class Metoder {
 		return forceToSpringExtension;
 	}
 
+	
+	public static double gravitationLaw(double mass1, double mass2, double radius) {
+		double gravitationLaw = G*((mass1*mass2)/Math.pow(radius, 2));
+		return gravitationLaw;
+	}
 		
 }
 
