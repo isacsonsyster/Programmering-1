@@ -343,6 +343,10 @@ public class Metoder {
 		return gravitationLaw;
 	}
 		
+	public static double distanceBetweenBodies (double mass1, double mass2, double force) {
+		double distanceBetweenBodies = Math.sqrt((mass1*mass2/(force*G));
+		return distanceBetweenBodies;
+	}
 }
 
 
