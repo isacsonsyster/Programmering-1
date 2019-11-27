@@ -47,7 +47,7 @@ public class Metoder {
 	 * the method calculate the pressure for a Fluid in FluidTable on a certain deep
 	 * @param fluid is a fluid from FluidTable
 	 * @param deep is the deep for the pressure measured in meter
-	 * @return the value for the pressure on a certain deep in measured in Pascal
+	 * @return the value for the pressure on a certain deep in measured in Pascal ((N/m^2) ((kg*m^2)/m^2))
 	 */
 	public static double fluidPressure(FluidTable fluid, double deep) {
 		double fluidPressure = fluid.density*g_swe*deep;
@@ -57,7 +57,7 @@ public class Metoder {
 	/**
 	 * the method calculate the pressure for Water on a certain deep. 
 	 * @param deep is the deep for the pressure under water measured in meter
-	 * @return the value for the water pressure on a certain deep measured in Pascal
+	 * @return the value for the water pressure on a certain deep measured in Pascal ((N/m^2) ((kg*m^2)/m^2))
 	 */
 	public static double pressureUnderWater(double deep) {
 		double pressureUnderWater = FluidTable.WATER.density*g_swe*deep;
@@ -67,8 +67,8 @@ public class Metoder {
 	/**
 	 * the method calculate the kinetic energy for a object with mass and velocity
 	 * @param mass is the mass for the object measured in kilogram
-	 * @param velocity is the velocity for the object measured in meter per second 
-	 * @return the value for the kinetic energy for a object measured in Joule
+	 * @param velocity is the velocity for the object measured in meter per second (m/s) 
+	 * @return the value for the kinetic energy for a object measured in Joule (((kg*m^2)/s^2) ((Newtonmeter)))
 	 */
 	public static double kineticEnergy(double mass, double velocity) {
 		double kineticEnergy = (mass* Math.pow(velocity, 2))/2;
@@ -79,7 +79,7 @@ public class Metoder {
 	 * the method calculate the potential energy for a object with mass and height
 	 * @param mass is the mass for the object measured in kilogram
 	 * @param height is the height for the object measured in meter
-	 * @return the value for the potential energy for a object measured in Joule
+	 * @return the value for the potential energy for a object measured in Joule (((kg*m^2)/s^2) ((Newtonmeter)))
 	 */
 	public static double potentialEnergy(double mass, double height) {
 		double potentialEnergy = mass*g_swe*height;
@@ -89,7 +89,7 @@ public class Metoder {
 	/**
 	 * the method calculate the velocity the object has if you drop it from a certain height
 	 * @param height is the height the object is dropped from measured in meter
-	 * @return the value of the velocity the object has, measured in m/s
+	 * @return the value of the velocity the object has, measured in meter per seconds (m/s)
 	 */
 	public static double fallSpeed(double height) {
 		double fallSpeed = Math.sqrt((2*height) / g_swe) * g_swe;
@@ -110,7 +110,7 @@ public class Metoder {
 	/**
 	 * the method calculate the mass of a fluid from the Fluidtable
 	 * @param fluid is a fluid from the fluidtable we calculate the mass of
-	 * @param volume is the volume of the fluid we calculate with, measured in cm^3
+	 * @param volume is the volume of the fluid we calculate with, measured in cubic centimeter (cm^3) 
 	 * @return the mass of the fluid measured in gram
 	 */
 	public static double volumeToMass(FluidTable fluid, double volume) {
@@ -121,7 +121,7 @@ public class Metoder {
 	/**
 	 * the method calculate the mass of a gas from the gastable
 	 * @param gas is the gas from the gastable we calculate the mass on
-	 * @param volume is the volume of the gas we calculate with, measured in cm^3
+	 * @param volume is the volume of the gas we calculate with, measured in cubic centimeter (cm^3) 
 	 * @return the mass of the gas measured in gram
 	 */
 	public static double volumeToMass(GasTable gas, double volume){
@@ -132,7 +132,7 @@ public class Metoder {
 	/**
 	 * the method calculate the mass of a solid from the solidtable
 	 * @param solid is a solid from the solidtable we calculate the mass on
-	 * @param volume is the volume o the solid we calculate with, measuerd in cm^3 
+	 * @param volume is the volume o the solid we calculate with, measuerd in cubic centimeter (cm^3) 
 	 * @return the mass of the solid, measured in gram
 	 */
 	public static double volumeToMass(SolidTable solid, double volume) {
@@ -144,7 +144,7 @@ public class Metoder {
 	 * the method calculate the average velocity with distance and time
 	 * @param distance is how long it went measured in meter
 	 * @param time is how long it has went, measured in seconds
-	 * @return the average speed, measured in meter per seconds
+	 * @return the average speed, measured in meter per seconds (m/s)
 	 */
 	public static double svtVelocity(double distance, double time) {
 		double svtVelocity = distance/time;
@@ -153,7 +153,7 @@ public class Metoder {
 	
 	/**
 	 * the method calculate the distance with velocity and time 
-	 * @param velocity is the how fast it went, measured in meter per seconds
+	 * @param velocity is the how fast it went, measured in meter per seconds (m/s)
 	 * @param time is how long it has went, measured in seconds
 	 * @return the distance, measured in meter
 	 */
@@ -165,7 +165,7 @@ public class Metoder {
 	/**
 	 * the method calculate the time with distance and velocity
 	 * @param distance is how far it went, measured in meter
-	 * @param velocity is how fast it went, measured in meter per seconds
+	 * @param velocity is how fast it went, measured in meter per seconds (m/s)
 	 * @return the time it has went, measured in seconds
 	 */
 	public static double svtTime(double distance, double velocity){
@@ -175,9 +175,9 @@ public class Metoder {
 	
 	/**
 	 * the method calculate work with distance and force
-	 * @param force is the force we use measured in Newton
+	 * @param force is the force we use measured in Newton (kg*m^2)
 	 * @param distance is how far we go, measured in meter
-	 * @return the value of work, measured in Newtonmeter or Joule (same thing) 
+	 * @return the value of work, measured in Newtonmeter or Joule (same thing) ((kg*m^2)/s^2)
 	 */
 	public static double work(double force, double distance){
 		double work = force*distance;
@@ -186,9 +186,9 @@ public class Metoder {
 	
 	/**
 	 * the method calculate the power with work and time
-	 * @param work is work we use, measured in Newtonmeter or Joule (same thing)
+	 * @param work is work we use, measured in Newtonmeter or Joule (same thing) ((kg*m^2)/s^2)
 	 * @param time is how long it takes, measured in seconds
-	 * @return the value of power, measured in Watt or Joule per second (same thing)
+	 * @return the value of power, measured in Watt or Joule per second (same thing) ((kg*m^2)/s^3)
 	 */
 	public static double power(double work, double time){
 		double power = work/time;
@@ -200,7 +200,7 @@ public class Metoder {
 	 * @param solid is a randomly chosen solid from the solidtable 
 	 * @param mass is the mass of the solid, measured in kilogram
 	 * @param deltaT is the temperature change, measured in Kelvin
-	 * @return the value of the amount of energy, measured in Joule
+	 * @return the value of the amount of energy, measured in Joule (((kg*m^2)/s^2) ((Newtonmeter)))
 	 */
 	public static double heat(SolidTable solid, double mass, double deltaT) {
 		double heat = solid.heatCapacity*mass*deltaT;
@@ -212,7 +212,7 @@ public class Metoder {
 	 * @param fluid is a randomly chosen fluid from the fluidtable 
 	 * @param mass is the mass of the fluid, measured in kilogram
 	 * @param deltaT is the temperature change, measured in Kelvin
-	 * @return the value of the amount of energy, measured in Joule 
+	 * @return the value of the amount of energy, measured in Joule (((kg*m^2)/s^2) ((Newtonmeter)))
 	 */
 	public static double heat(FluidTable fluid, double mass, double deltaT) {
 		double heat = fluid.heatCapacity*mass*deltaT;
@@ -224,7 +224,7 @@ public class Metoder {
 	 * @param gas is a randomly chosen gas from the gastable
 	 * @param mass is the mass of the fluid, measured in kilogram
 	 * @param deltaT is the temperature change, measured in Kelvin
-	 * @return the value of the amount of energy, measured in Joule 
+	 * @return the value of the amount of energy, measured in Joule (((kg*m^2)/s^2) ((Newtonmeter)))
 	 */
 	public static double heat(GasTable gas, double mass, double deltaT) {
 		double heat = gas.heatCapacity*mass*deltaT;
@@ -233,7 +233,7 @@ public class Metoder {
 	
 	/**
 	 * the method calculate how high something comes when it is thrown straight up (90 grades)
-	 * @param velocity is the velocity we throw it with, measured in m/s
+	 * @param velocity is the velocity we throw it with, measured in meter per seconds (m/s)
 	 * @return the value of how high it came, measured in meter
 	 */
 	public static double velocityToHeight(double velocity) {
@@ -244,9 +244,9 @@ public class Metoder {
 	/**
 	 * the method calculate how fast something goes with acceleration and time, aside from the initial speed. (initial speed=0)
 	 * @param velocity
-	 * @param acceleration is how much it accelerates, measured in meter per cubic seconds
+	 * @param acceleration is how much it accelerates, measured in meter per cubic seconds (m/s^2)
 	 * @param time is how long it is, measured in seconds. 
-	 * @return the velocity of how fast something has went, measured in meter per seconds 
+	 * @return the velocity of how fast something has went, measured in meter per seconds (m/s)
 	 */
 	public static double accelerationToVelocity(double acceleration, double time) {
 		double accelerationToVelocity = acceleration*time;
@@ -265,10 +265,10 @@ public class Metoder {
 	}
 	
 	/**
-	 * the method calculate the friction with the friction coefficient and normal force, measured in Newton
+	 * the method calculate the friction with the friction coefficient and normal force, measured in Newton  ((kg.m)/s^2)
 	 * @param frictionCoefficient is how much friction it is, has no unit 
-	 * @param normalForce is the force that eliminate the gravity force, measured in Newton
-	 * @return the value in friction, measured in Newton
+	 * @param normalForce is the force that eliminate the gravity force, measured in Newton  ((kg.m)/s^2)
+	 * @return the value in friction, measured in Newton  ((kg.m)/s^2)
 	 */
 	public static double friction(double frictionCoefficient, double normalForce) {
 		double friction = frictionCoefficient*normalForce;
@@ -277,8 +277,8 @@ public class Metoder {
 	
 	/**
 	 * the method calculates how much friction something has
-	 * @param friction is how much resistance to the friction there is, measured in Newton
-	 * @param normalForce is the force that eliminate the gravity force, measured in Newton
+	 * @param friction is how much resistance to the friction there is, measured in Newton  ((kg.m)/s^2)
+	 * @param normalForce is the force that eliminate the gravity force, measured in Newton ((kg.m)/s^2)
 	 * @return how much friction there is, has no unit 
 	 */
 	public static double frictionCoefficient(double friction, double normalForce) {
@@ -287,16 +287,23 @@ public class Metoder {
 	}
 	
 	/**
-	 * the method calculates how much acceleration something has with distance and time
+	 * the method calculates how much acceleration something has with distance and time, aside from initial speed (initial speed=0)
 	 * @param distance is how long it has went, measured in meter
 	 * @param time, is how long time it has went, measured in seconds
-	 * @return the value in acceleration, measured in meter per cubic seconds
+	 * @return the value in acceleration, measured in meter per cubic seconds (m/s*2)
 	 */
 	public static double distanceToAcceleration(double distance, double time) {
 		double distanceToAcceleration = 2*distance/Math.pow(time, 2);
 		return distanceToAcceleration;
 	}
 	
+	/**
+	 * the method calculates how long something has vent with velocity, acceleration and time
+	 * @param velocity is how fast it went, measured in meter per seconds
+	 * @param acceleration is how much it has accelerates, measured in meter per cubic seconds (m/s^2)
+	 * @param time is how long time it took, measured in seconds
+	 * @return the value in distance, measured in meter
+	 */
 	public static double accelerationToDistance(double velocity, double acceleration, double time) {
 		double accelerationToDistance = velocity*time + ((acceleration*Math.pow(time, 2))/2);
 		return accelerationToDistance;
