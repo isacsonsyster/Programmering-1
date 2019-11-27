@@ -321,6 +321,10 @@ public class Metoder {
 	}
 	
 	
+	public static double forceToSpringExtension(double force, double springCoefficient) {
+		double forceToSpringExtension = force/springCoefficient;
+		return forceToSpringExtension;
+	}
 
 		
 }
