@@ -332,19 +332,26 @@ public class Metoder {
 	}
 
 	/**
-	 * the method calculates NEwtons gravitationlaw with mass, radius and G
-	 * @param mass1 is the mass of the first object, measured in kilogram
-	 * @param mass2 is the mass of the second object, measured in kilogram
-	 * @param radius is the distance between the two masses centers, measured in meter
+	 * the method calculates Newtons gravitation law with mass, radius and G
+	 * @param mass1 is the mass of the first object (body), measured in kilogram
+	 * @param mass2 is the mass of the second object (body), measured in kilogram
+	 * @param radius is the distance between the two objects (bodies) centers, measured in meter
 	 * @return the value in Force, measured in Newton ((kg*m)/s)
 	 */
 	public static double gravitationLaw(double mass1, double mass2, double radius) {
 		double gravitationLaw = G*((mass1*mass2)/Math.pow(radius, 2));
 		return gravitationLaw;
 	}
-		
+	
+	/**
+	 * 	the method calculate Newtons gravitation law, but he distance between the two objects. So with force, mass and G
+	 * @param mass1 is the mass of the first object (body), measured in kilogram
+	 * @param mass2 is the mass of the second object (body) measured in kilogram
+	 * @param force is the amount of force there is between the two objects (bodies), measured in Newton ((kg*m)/s)
+	 * @return the value in radius (distance between the two objects (bodies) center, measured in meter
+	 */
 	public static double distanceBetweenBodies (double mass1, double mass2, double force) {
-		double distanceBetweenBodies = Math.sqrt((mass1*mass2/(force*G));
+		double distanceBetweenBodies = Math.sqrt((mass1*mass2/(force*G)));
 		return distanceBetweenBodies;
 	}
 }
