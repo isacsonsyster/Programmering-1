@@ -11,6 +11,7 @@ public class Metoder {
 	static double R = 8.3145;
 	
 	public static void main(String [] args) {
+		/**
 		System.out.println (volumeToMass(SolidTable.IRON, 60000));
 		System.out.println(svtDistance(2.7, 3000));
 		System.out.println(heat(FluidTable.WATER, 4, 78));
@@ -18,7 +19,8 @@ public class Metoder {
 		System.out.println(velocityToHeight(16.67));
 		double work = (kineticEnergy(735, 27.78));
 		System.out.println(power (work, 4.8));
-		System.out.println();
+		System.out.println(); */
+		
 	}
 	/**
 	 * the method calculate Fahrenheit to celcius 
@@ -281,6 +283,11 @@ public class Metoder {
 	public static double frictionCoefficient(double friction, double normalForce) {
 		double frictionCoefficient = friction/normalForce;
 		return frictionCoefficient;
+	}
+	
+	public static double distanceToAcceleration(double distance, double time) {
+		double distanceToAcceleration = 2*distance/Math.pow(time, 2);
+		return distanceToAcceleration;
 	}
 	
 	
