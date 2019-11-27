@@ -331,7 +331,13 @@ public class Metoder {
 		return forceToSpringExtension;
 	}
 
-	
+	/**
+	 * the method calculates NEwtons gravitationlaw with mass, radius and G
+	 * @param mass1 is the mass of the first object, measured in kilogram
+	 * @param mass2 is the mass of the second object, measured in kilogram
+	 * @param radius is the distance between the two masses centers, measured in meter
+	 * @return the value in Force, measured in Newton ((kg*m)/s)
+	 */
 	public static double gravitationLaw(double mass1, double mass2, double radius) {
 		double gravitationLaw = G*((mass1*mass2)/Math.pow(radius, 2));
 		return gravitationLaw;
