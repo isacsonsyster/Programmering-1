@@ -285,6 +285,12 @@ public class Metoder {
 		return frictionCoefficient;
 	}
 	
+	/**
+	 * the method calculates how much acceleration something has with distance and time
+	 * @param distance is how long it has went, measured in meter
+	 * @param time, is how long time it has went, measured in seconds
+	 * @return the value in acceleration, measured in meter per cubic seconds
+	 */
 	public static double distanceToAcceleration(double distance, double time) {
 		double distanceToAcceleration = 2*distance/Math.pow(time, 2);
 		return distanceToAcceleration;
