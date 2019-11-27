@@ -20,6 +20,7 @@ public class Metoder {
 		double work = (kineticEnergy(735, 27.78));
 		System.out.println(power (work, 4.8));
 		System.out.println(); */
+		System.out.println (accelerationToDistance(1,10,5));
 		
 	}
 	/**
@@ -294,6 +295,11 @@ public class Metoder {
 	public static double distanceToAcceleration(double distance, double time) {
 		double distanceToAcceleration = 2*distance/Math.pow(time, 2);
 		return distanceToAcceleration;
+	}
+	
+	public static double accelerationToDistance(double velocity, double acceleration, double time) {
+		double accelerationToDistance = velocity*time + ((acceleration*Math.pow(time, 2))/2);
+		return accelerationToDistance;
 	}
 	
 	
