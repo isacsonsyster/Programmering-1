@@ -47,7 +47,7 @@ public class Metoder {
 	 * the method calculate the pressure for a Fluid in FluidTable on a certain deep
 	 * @param fluid is a fluid from FluidTable
 	 * @param deep is the deep for the pressure measured in meter
-	 * @return the value for the pressure on a certain deep in measured in Pascal ((N/m^2) ((kg*m^2)/m^2))
+	 * @return the value for the pressure on a certain deep in measured in Pascal ((N/m^2) ((kg*m^2)/(m^2*s))
 	 */
 	public static double fluidPressure(FluidTable fluid, double deep) {
 		double fluidPressure = fluid.density*g_swe*deep;
@@ -57,7 +57,7 @@ public class Metoder {
 	/**
 	 * the method calculate the pressure for Water on a certain deep. 
 	 * @param deep is the deep for the pressure under water measured in meter
-	 * @return the value for the water pressure on a certain deep measured in Pascal ((N/m^2) ((kg*m^2)/m^2))
+	 * @return the value for the water pressure on a certain deep measured in Pascal ((N/m^2) ((kg*m^2)/(m^2*s)))
 	 */
 	public static double pressureUnderWater(double deep) {
 		double pressureUnderWater = FluidTable.WATER.density*g_swe*deep;
@@ -311,16 +311,21 @@ public class Metoder {
 	
 	/**
 	 * the method calculates Hookes law, which is the force it takes to extend and/or compress a spring. 
-	 * @param springCoefficient is the coefficient. This is how "hard" it is to extend it. measured in 	Newton per meter ((N/m) ((kg*m^2)/m)
+	 * @param springCoefficient is the coefficient. This is how "hard" it is to extend it. measured in 	Newton per meter ((N/m) ((kg*m)/(m*s))
 	 * @param springExtension is the distance it is extend, measured in meter
-	 * @return the value in force, measured in Newton ((kg*m)/2)
+	 * @return the value in force, measured in Newton ((kg*m)/s)
 	 */
 	public static double hookesLaw(double springCoefficient, double springExtension) {
 		double hookesLaw = springCoefficient*springExtension;
 		return hookesLaw;	
 	}
 	
-	
+	/**
+	 * the method calculates Hookes law, but with force and the spring coefficient. 
+	 * @param force is the amount of force you need to extend the spring, measured in Newton ((kg*m/s)
+	 * @param springCoefficient is how hard it is to extend the spring, measured in Newton per meter ((N/m) or (kg*m)/(m*s))
+	 * @return
+	 */
 	public static double forceToSpringExtension(double force, double springCoefficient) {
 		double forceToSpringExtension = force/springCoefficient;
 		return forceToSpringExtension;
