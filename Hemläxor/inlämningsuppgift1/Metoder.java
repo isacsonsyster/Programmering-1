@@ -309,6 +309,12 @@ public class Metoder {
 		return accelerationToDistance;
 	}
 	
+	public static double hookesLaw(double springCoefficient, double springExtension) {
+		double hookesLaw = springCoefficient*springExtension;
+		return hookesLaw;
+		
+	}
+	
 	
 
 		
