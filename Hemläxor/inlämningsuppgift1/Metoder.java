@@ -11,16 +11,41 @@ public class Metoder {
 	static double R = 8.3145;
 	
 	public static void main(String [] args) {
+		
+		// Question 1
 		System.out.println (volumeToMass(SolidTable.IRON, 60000));
+		
+		// Question  2
 		System.out.println(svtDistance(2.7, 3000));
+		
+		// Question 3
 		System.out.println(heat(FluidTable.WATER, 4, 78));
+		
+		// Question 4
 		System.out.println(pressureUnderWater(75));
+		
+		// Question 5
 		System.out.println(velocityToHeight(16.67));
+		
+		// Question 6
 		double work = (kineticEnergy(735, 27.78));
 		System.out.println(power (work, 4.8));
-		System.out.println(); 
 		
-	}
+		//Question  7 
+		double h = 12;
+		double counter = 0;
+		while(h >= 0.5) {
+				
+			
+				h *= 0.99;
+				counter ++;		
+			}
+		System.out.println(counter);
+		
+		// Question 8 
+			
+		}
+	
 	/**
 	 * the method calculate Fahrenheit to celcius 
 	 * @param fahrenheit is the value in fahrenheit
