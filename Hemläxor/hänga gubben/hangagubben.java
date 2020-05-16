@@ -12,24 +12,43 @@ public class hangagubben {
 	public static int correctWord;
 	public static ArrayList<Character> guessedLetters = new ArrayList<Character>();
 	public static char guessedLetter;
+	public static int chooseDifficulty;
+	public static int chooseAgain;
 	public static void main(String[] args) {
 	
+		startGame();
+		playGame();
+		playAgain();
 		
 	}
 
 	
 	
 	
+	
+	
 
 		
 	
 	
-	
+	public static void startGame() {
+		System.out.println("välkommen till hänga gubben");
+		System.out.println("Ett ord kommer slumpas fram och det gäller för dig att gissa rätt på vilket ord det är");
+		System.out.println("du ska nu få välja svårighetsgrad, skriv 1. för lätt");
+		System.out.println("2. för medium");
+		System.out.println("och 3. för svår");
 		
+		if (chooseDifficulty == 1){
+			easyLevel();
+		}
+		else if (chooseDifficulty == 2) {
+			mediumLevel();
+		}
 
-
-
-
+		else if (chooseDifficulty == 3){
+			hardLevel();
+		}
+	}
 	public static void playGame() {
 		guessedWord ();
 		System.out.println("ordet du ska gissa på är " + wordToGuess.length + "bokstäver långt");
@@ -49,7 +68,7 @@ public class hangagubben {
 			}
 		}
 		
-	}
+	
 	
 	
 	
@@ -130,11 +149,28 @@ public class hangagubben {
 	public static boolean doneWithWord() {
 		for (int i = 0; i < guessedWord.length; i++) {
 			if (guessedWord[i] == '_') {
-				return false;
+			
 			}
 		}
+		return false;
 	}
 	
+	public static void playAgain() {
+		System.out.println("Vill du spela igen?");
+		System.out.println("Tryck 1. för NEJ");
+		System.out.println("Tryck 2. för JA");
+		System.out.println("tryck 3 för att byta svårighetsgrad");
+		
+		if (chooseAgain == 1) {
+			break;
+		}
+			else if (chooseAgain == 2) {
+				playGame();
+			}
+			else if (chooseAgain == 3) {
+				startGame();
+		}
 	
 }
+	}
 
