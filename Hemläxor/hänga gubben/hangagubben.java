@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class hangagubben {
@@ -23,13 +24,32 @@ public class hangagubben {
 		
 	
 	
+	
 		
+
+
+
+
+	public static void playGame() {
+		guessedWord ();
+		System.out.println("ordet du ska gissa på är " + wordToGuess.length + "bokstäver långt");
 		
-
-
-
-
-
+		boolean guessedLetter = false;
+		while (!guessedLetter && guessesLeft!=0) {
+			checkIfRight();
+			guessedLetter = doneWithWord();
+			System.out.println("Ordet" + Arrays.toString(guessedWord));
+			if (guessedLetters.size() == 0) {
+				System.out.println("Du har alla dina gissningar kvar." + guessesLeft);
+				
+			}
+				else {
+					System.out.println("du har" + guessesLeft + "gissningar kvar");
+				}
+			}
+		}
+		
+	}
 	
 	
 	
@@ -99,7 +119,7 @@ public class hangagubben {
 
 	}
 	
-	public static void guessedLetter() {
+	public static void guessedWord() {
 		guessedWord = new char [wordToGuess.length];
 		for (int i = 0; i < guessedWord.length; i++) {
 			guessedWord [i] = '_';
@@ -107,6 +127,13 @@ public class hangagubben {
 		System.out.println(guessedWord);
 	}
 	
+	public static boolean doneWithWord() {
+		for (int i = 0; i < guessedWord.length; i++) {
+			if (guessedWord[i] == '_') {
+				return false;
+			}
+		}
+	}
 	
 	
 }
