@@ -6,6 +6,7 @@ public class hangagubben {
 	public static void main(String[] args) {
 	
 		Scanner input = new Scanner (System.in);
+		Random random = new Random();
 		System.out.println("Hej och välkommen till hänga gubben.");
 	
 	
@@ -123,14 +124,24 @@ public class hangagubben {
 		System.out.println("Du valde den lätta nivån.");
 		System.out.println("Du kommer ha 15 gissningar på dig att gissa rätt ord");
 		System.out.println("Kör hårt och lycka till!");
-		
-		wordToGuess = easyWords[random.nextInt(easyWords.length).toCharArray]
+		char[] wordToGuess = easyWords[Random.nextInt(easyWords.length).toCharArray]
 	}
 	
 	public static void mediumLevel{
-		
+		System.out.println("Du valde medel nivån");
+		System.out.println("Du kommer ha 11 gissningar på dig att gissa rätt ord");
+		System.out.println("Det är svårare ord än den lätta nivån");
+		System.out.println("Lycka till");
+		char[] wordToGuess = mediumWords[Random.nextInt(mediumWords.length).toCharArray];
 	}
 	
-	public static void hardLevel
+	public static void hardLevel{
+		System.out.println("Du valde den svåra nivån");
+		System.out.println("Du kommer ha 8 gissningar på dig att gissa rätt ord");
+		System.out.println("Använd dem väl");
+		System.out.println("Det är väldigt mycket svårare ord än medel och lätta nivån");
+		System.out.println("Lycka till, du kommer behöva det");
+		char [] wordToGuess = hardWords[Random.nextInt(hardWords.length).toCharArray];
+	}
 }
 
