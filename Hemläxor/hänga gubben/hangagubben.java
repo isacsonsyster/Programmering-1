@@ -3,145 +3,111 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class hangagubben {
+	public static Scanner input = new Scanner (System.in);
+	public static Random random = new Random();
+	public static char[] wordToGuess; 
+	public static int guessesLeft;
+	public static char[] guessedWord;
+	public static int correctWord;
+	public static ArrayList<Character> guessedLetters = new ArrayList<Character>();
+	public static char guessedLetter;
 	public static void main(String[] args) {
 	
-		Scanner input = new Scanner (System.in);
-		Random random = new Random();
-		System.out.println("Hej och välkommen till hänga gubben.");
-	
-	
-		ArrayList<String> easyWords = new ArrayList<String>();
-		easyWords.add("Trilla");
-		easyWords.add("Sill");
-		easyWords.add("Klass");
-		easyWords.add("Kallare");
-		easyWords.add("Hårborste");
-		easyWords.add("Naglar");
-		easyWords.add("Kommer");
-		easyWords.add("Mycket");
-		easyWords.add("Sverige");
-		easyWords.add("Stora");
-		easyWords.add("Inget");
-		easyWords.add("Samma");
-		easyWords.add("Människor");
-		easyWords.add("Europa");
-		easyWords.add("Barnen");
-		easyWords.add("Händer");
-		easyWords.add("Kallelse");
-
 		
-		ArrayList<String> mediumWords = new ArrayList<String>();
-		mediumWords.add("Företaget");
-		mediumWords.add("Skola");
-		mediumWords.add("Dator");
-		mediumWords.add("Hårsnodd");
-		mediumWords.add("Såga");
-		mediumWords.add("Lat");
-		mediumWords.add("Inlagd");
-		mediumWords.add("Säga");
-		mediumWords.add("Låt");
-		mediumWords.add("Förlåt");
-		mediumWords.add("Men");
-		mediumWords.add("Anteckningsblock");
-		mediumWords.add("Måttband");
-		mediumWords.add("Dalarna");
-		mediumWords.add("Virknål");
-		mediumWords.add("Sticka");
-		mediumWords.add("Galler");
-		mediumWords.add("Bläckpenna");
-		mediumWords.add("Tråd");
-		mediumWords.add("Äta");
-		mediumWords.add("Körskola");
-		mediumWords.add("Kyrka");
-		mediumWords.add("Grav");
-		mediumWords.add("Maten");
-		
-		ArrayList<String> hardWords = new ArrayList<String>();
-		hardWords.add("Jazz");
-		hardWords.add("Flaggstång");
-		hardWords.add("Extra");
-		hardWords.add("Vispgrädde");
-		hardWords.add("Ukulele");
-		hardWords.add("Saxofon");
-		hardWords.add("Xylofon");
-		hardWords.add("Portion");
-		hardWords.add("Yatzy");
-		hardWords.add("Psykolog");
-		hardWords.add("Marabou");
-		hardWords.add("Hundkoja");
-		hardWords.add("Yxa");
-		hardWords.add("Oxe");
-		hardWords.add("Vas");
-		hardWords.add("Krokodiltårar");
-		hardWords.add("Häst");
-		hardWords.add("Croissanter");
-		hardWords.add("Vibrationer");
-		hardWords.add("Byxa");
-		hardWords.add("Taxi");
-		hardWords.add("Squash");
-		hardWords.add("Nationalencyklopedin");
-		hardWords.add("Epidemiologi");
-		hardWords.add("Justitieminister");
-		hardWords.add("Växsjö");
-
-
-
-
-
-	
-	
 	}
+
+	
+	
+	
+
+		
+	
+	
+		
+		
+
+
+
+
+
+	
+	
+	
 	/**
 	 * this method will check if the letter the player are guessing are in the word or not
 	 * @return if the letter was right or not 
 	 */
 	
-	public static boolean checkIfRight(){
+	public static void checkIfRight(){
 		boolean rightLetter = false;
-		for(i=0; i<wordToGuess; i++) {
-			if (wordToGuess[i] = guessedLetter) {
+		for(int i = 0; i < wordToGuess.length; i++) {
+			if (wordToGuess[i] == guessedLetter) {
 				System.out.println("Bra, du gissade rätt!");
-				correctWord[i] = guessedLetter;
+				guessedWord[i] = guessedLetter;
 				rightLetter = true;
 				
 				if(rightLetter = false) {
 					System.out.println("Tyvärr, du gissade fel, testa att gissa en annan bokstav");
-					if(wrongLetters.contains(guessedLetter)) {
+					if(guessedLetters.contains(guessedLetter)) {
 					}
 					else {
-						wrongLetters.add(guessedLetter){
+						guessedLetters.add(guessedLetter){
 						}
 					}
 				}
 			}
 		}
 	}
-	public static Array guessedWordSoFar{
+
 		
-	}
 	
-	public static void easyLevel{
+	
+	public static void easyLevel(){
+		String [] easyWords = {
+		"Trilla","Sill","Klass","Kallare","Hårborste","Naglar","Kommer","Mycket","Sverige","Stora","Inget","Samma",
+		"Människor","Europa","Barnen","Händer","Kallelse"};
 		System.out.println("Du valde den lätta nivån.");
 		System.out.println("Du kommer ha 15 gissningar på dig att gissa rätt ord");
 		System.out.println("Kör hårt och lycka till!");
-		char[] wordToGuess = easyWords[Random.nextInt(easyWords.length).toCharArray]
+		int guessesLeft = 15;
+		char[] wordToGuess = easyWords[random.nextInt(easyWords.length)].toCharArray();
 	}
 	
-	public static void mediumLevel{
+	public static void mediumLevel(){
+		String[] mediumWords = {"Företaget", "Skola", "Dator", "Hårsnodd", "Såga", "Lat", "Bläckpenna",
+		"Förlåt", "Men", "Virknål", "Körskola", "Kyrka", "Maten", 
+		"Måttband", "Galler", "Grav", "Inlagd"};
 		System.out.println("Du valde medel nivån");
 		System.out.println("Du kommer ha 11 gissningar på dig att gissa rätt ord");
 		System.out.println("Det är svårare ord än den lätta nivån");
 		System.out.println("Lycka till");
-		char[] wordToGuess = mediumWords[Random.nextInt(mediumWords.length).toCharArray];
+		int guessesLeft = 11;
+		char[] wordToGuess = mediumWords[random.nextInt(mediumWords.length)].toCharArray();
 	}
 	
-	public static void hardLevel{
+	public static void hardLevel (){
+		String [] hardWords = { "Jazz", "Flaggstång", "Extra", "Vispgrädde", "Portion", "Xylofon", 
+		"Psykolog", "Krokodiltårar", "Croissanter", "Squash", "Nationalencyklopedin", 
+		"Justitieminister", "Växsjö", "Hundkoja", "Yatzy",  "Ukulele", "Yxa", "Oxe", "Taxi",};
 		System.out.println("Du valde den svåra nivån");
 		System.out.println("Du kommer ha 8 gissningar på dig att gissa rätt ord");
 		System.out.println("Använd dem väl");
 		System.out.println("Det är väldigt mycket svårare ord än medel och lätta nivån");
 		System.out.println("Lycka till, du kommer behöva det");
-		char [] wordToGuess = hardWords[Random.nextInt(hardWords.length).toCharArray];
+		int guessesLeft = 8;
+		char [] wordToGuess = hardWords[random.nextInt(hardWords.length)].toCharArray(); // slumpar ett ord från en arraylist och lägger in i en chararray så att man kan gissa på ordet.// 
+
 	}
+	
+	public static void guessedLetter() {
+		guessedWord = new char [wordToGuess.length];
+		for (int i = 0; i < guessedWord.length; i++) {
+			guessedWord [i] = '_';
+		}
+		System.out.println(guessedWord);
+	}
+	
+	
+	
 }
 
