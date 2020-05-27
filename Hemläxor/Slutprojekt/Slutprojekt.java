@@ -23,7 +23,12 @@ public class Slutprojekt {
 			playGame();
 		}
 		
-
+		public static void clearLists() {
+			playersGuesses.clear();
+			wrongGuesses.clear();
+		}
+		
+		
 	public static void startGame() {
 		System.out.println("välkommen till hänga gubben");
 		System.out.println("Ett ord kommer slumpas fram och det gäller för dig att gissa rätt på vilket ord det är");
@@ -84,6 +89,7 @@ public class Slutprojekt {
 			
 			Random word = new Random();
 
+
 		}
 		
 		public static void hardWordsToGuess(){
@@ -102,12 +108,14 @@ public class Slutprojekt {
 			hardWords.add("växjö");
 			hardWords.add("ukulele");
 			
-			Random word = new Random();
+			Random wordToConvertToGuess = new Random();
+
+			
 		}
 
 
 			public static void easyLevel() {
-				wordToConvertToGuess = easyWords.get(word.nextInt());
+
 				
 				for(int i = 0; i< wordToConvertToGuess.length(); i++) {
 					String e = String.valueOf(wordToConvertToGuess.charAt(i));
@@ -118,7 +126,6 @@ public class Slutprojekt {
 			}
 			
 			public static void mediumLevel() {
-				wordToConvertToGuess = mediumWords.get(word.nextInt());
 				
 				for(int i = 0; i< wordToConvertToGuess.length(); i++) {
 					String e = String.valueOf(wordToConvertToGuess.charAt(i));
@@ -131,7 +138,6 @@ public class Slutprojekt {
 			
 
 			public static void hardLevel() {
-				wordToConvertToGuess = hardWords.get(word.nextInt());
 				
 				for(int i = 0; i< wordToConvertToGuess.length(); i++) {
 					String e = String.valueOf(wordToConvertToGuess.charAt(i));
@@ -222,9 +228,11 @@ public class Slutprojekt {
 					
 				}
 					else if (chooseAgain == 2) {
+						clearLists();
 						playGame();
 					}
 					else if (chooseAgain == 3) {
+						clearLists();
 						startGame();
 				}
 			}
