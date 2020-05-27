@@ -6,7 +6,7 @@ public class Slutprojekt {
 	
 		public static int chooseWhichLevel;
 		public static int guessesLeft;
-		public static ArrayList<String> easyWords;
+		public static ArrayList<String> easyWords; 
 		public static ArrayList<String> mediumWords;
 		public static ArrayList<String> hardWords;
 		public static String wordToConvertToGuess;
@@ -18,17 +18,23 @@ public class Slutprojekt {
 		public static int chooseAgain;
 		public static ArrayList<String> wrongGuesses;
 
+
 		public static void main(String[] args) {
 			startGame();
 			playGame();
+			
 		}
 		
+		
+		//raderar allt som finns i listorna med lagrade gissningar så att det inte blir något konstigt sen när spelet startas igen via playgame
 		public static void clearLists() {
 			playersGuesses.clear();
 			wrongGuesses.clear();
 		}
 		
-		
+		/**
+		 * startar spelet och låter en välja svårighetsgrad som man vill spela
+		 */
 	public static void startGame() {
 		System.out.println("välkommen till hänga gubben");
 		System.out.println("Ett ord kommer slumpas fram och det gäller för dig att gissa rätt på vilket ord det är");
@@ -53,6 +59,10 @@ public class Slutprojekt {
 			guessesLeft = 8;
 		}
 	}
+	
+		/**
+		 * en arraylist som lagrar orden för den lätta nivån
+		 */
 		public static void easyWordsToGuess(){
 			
 			easyWords = new ArrayList<String>();
@@ -70,7 +80,9 @@ public class Slutprojekt {
 			Random word = new Random();
 
 		}
-
+		/**
+		 * en arraylist som lagrar orden för medelnivån
+		 */
 		public static void mediumWordsToGuess(){
 			
 		
@@ -92,6 +104,9 @@ public class Slutprojekt {
 
 		}
 		
+		/**
+		 * en arraylist som lagrar orden för den svåra nivån
+		 */
 		public static void hardWordsToGuess(){
 			
 		
@@ -113,7 +128,9 @@ public class Slutprojekt {
 			
 		}
 
-
+		/**
+		 * Ska ta in ett värde från easywords och skriva ut hur många bokstäver det är i ordet.
+		 */
 			public static void easyLevel() {
 
 				
@@ -125,6 +142,9 @@ public class Slutprojekt {
 					System.out.println("ordet du ska gissa på är" + wordToConvertToGuess.length() + "bokstäver långt" );
 			}
 			
+			/**
+			 * Ska ta in ett värde från mediumwords och skriva ut hur många bokstäver det är i ordet.
+			 */
 			public static void mediumLevel() {
 				
 				for(int i = 0; i< wordToConvertToGuess.length(); i++) {
@@ -136,7 +156,9 @@ public class Slutprojekt {
 				System.out.println("ordet du ska gissa på är" + wordToConvertToGuess.length() + "bokstäver långt" );
 			}
 			
-
+			/**
+			 * Ska ta in ett värde från hardwords och skriva ut hur många bokstäver det är i ordet.
+			 */
 			public static void hardLevel() {
 				
 				for(int i = 0; i< wordToConvertToGuess.length(); i++) {
@@ -147,6 +169,10 @@ public class Slutprojekt {
 				System.out.println("ordet du ska gissa på är" + wordToConvertToGuess.length() + "bokstäver långt" );
 			}
 			
+			/**
+			 * ska skriva ut alla bokstäver som linjer
+			 * @param numberOfLetters en int för att hålla nummer
+			 */
 			public static void makeWordToLines(int numberOfLetters) {
 				
 				for(int i = 0; i < numberOfLetters; i++) {
@@ -156,6 +182,9 @@ public class Slutprojekt {
 				}
 			}
 			
+			/**
+			 * själva spelet där man gissar på en bokstav
+			 */
 			public static void playGame() {
 			
 				for(int i = 0; i <wordGuessedSoFar.size(); i++) {
@@ -168,11 +197,14 @@ public class Slutprojekt {
 			}
 			
 			
-			
+			/**
+			 * ska kolla om spelarens gissning är rätt eller inte och hur många gissningar det är kvar
+			 */
 			public static void checkIfRight() {
 				for(int i = 0; i < playersGuesses.size(); i++) {
 					
 					if(guessedLetter.equals(playersGuesses.get(i))) {
+						
 						
 						System.out.println("Du har redan gissat på denna bokstav, gissa på en annan");
 						playGame();
@@ -186,12 +218,21 @@ public class Slutprojekt {
 			
 				for(int i = 0; i <wordToConvertToGuess.length() ; i++) {
 				 
-					 if (guessedLetter.equals(wordToGuess.get(i)){
+					 if (guessedLetter.equals(wordToGuess.get(i))){
 						
+						wordGuessedSoFar.set(i, guessedLetter);
+						 
 						System.out.println("Bra, du gissade rätt");
-						System.out.println("Gissa på en ny bokstav");
-						playGame();
+						
+						System.out.println("Det här är det du gissat hittils");
+						System.out.println(wordGuessedSoFar);
+						checkIfWordIsDone();
+						
+						
+						
+						
 					}
+					 
 					 
 					 else if (guessedLetter.equals(wrongGuesses.get(i))){
 						System.out.println(wrongGuesses);
@@ -211,6 +252,8 @@ public class Slutprojekt {
 						
 						else{
 							System.out.println("du har nu" + guessesLeft + "kvar");
+							System.out.println("Det här är det du gissat hittils");
+							System.out.println(wordGuessedSoFar);
 							System.out.println("Försök en gång till");
 							playGame();
 						break;
@@ -218,6 +261,38 @@ public class Slutprojekt {
 			}
 				
 		}
+			}
+				
+			
+			
+			
+			/**
+			 * Ska kolla om ordet är klart eller inte
+			 */
+				public static void checkIfWordIsDone() {
+					String Ester = "_";
+					boolean Isacson = false;
+					for(int i = 0; i < wordGuessedSoFar.size(); i++) {
+						if(!(Ester.equals(wordGuessedSoFar.get(i))));
+						Isacson = true;
+					}
+					
+					if (Isacson == true) {
+
+					System.out.println("Grattis, du gissade rätt ord");
+					playAgain();
+					}
+					
+					else {
+						System.out.println("Gissa på en ny bokstav");
+						playGame();
+				}
+				
+			}
+				
+			/**
+			 * när spelaren har vunnit eller förlorat ska man kunna välja att spela igen eller inte. 
+			 */
 			public static void playAgain() {
 				System.out.println("Vill du spela igen?");
 				System.out.println("Tryck 1. för NEJ");
