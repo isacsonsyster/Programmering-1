@@ -32,6 +32,8 @@ public class Slutprojekt {
 		public static void clearLists() {
 			playersGuesses.clear();
 			wrongGuesses.clear();
+			wordGuessedSoFar.clear();
+			wordToGuess.clear();
 		}
 		
 		/**
@@ -41,9 +43,10 @@ public class Slutprojekt {
 		System.out.println("välkommen till hänga gubben");
 		System.out.println("Ett ord kommer slumpas fram och det gäller för dig att gissa rätt på vilket ord det är");
 		System.out.println("du ska nu få välja svårighetsgrad:");
-		System.out.println("skriv 1 för lätt,");
-		System.out.println("skriv 2 för medium");
-		System.out.println("och 3 för svår");
+		System.out.println("skriv 1 för lätt. Då kommer du ha 15 gissningar");
+		System.out.println("skriv 2 för medium. Då kommer du ha 11 gissningar och svårare ord");
+		System.out.println("och 3 för svår. Då kommer du ha 8 gissningar och jättesvåra ord"
+				+ "");
 		
 
 	
@@ -83,7 +86,6 @@ public class Slutprojekt {
 			easyWords = new ArrayList<String>();
 		
 			easyWords.add("naglar");
-			easyWords.add("händer");
 			easyWords.add("kommer");
 			easyWords.add("mycket");
 			easyWords.add("sverige");
@@ -215,6 +217,7 @@ public class Slutprojekt {
 				}
 
 				System.out.println("Gissa på en bokstav");
+				System.out.println("om du skriver in en siffra eller fler bokstäver så kommer det dras en gissning");
 				guessedLetter = input.nextLine();		
 				checkIfRight();
 			}
@@ -238,13 +241,15 @@ public class Slutprojekt {
 				for(int i = 0; i <wordToGuess.size() ; i++) {
 				 
 					 if (guessedLetter.equals(wordToGuess.get(i))){
-
+						 
+						 wordGuessedSoFar.set(i, String.valueOf(guessedLetter)); 
 
 						ifRight = true;
 					}
 				}
 				
 				if (ifRight) {
+					
 					System.out.println("Bra, du gissade rätt");
 				
 					System.out.println("Det här är det du gissat hittils");
@@ -283,11 +288,10 @@ public class Slutprojekt {
 			 * Ska kolla om ordet är klart eller inte
 			 */
 			public static void checkIfWordIsDone() {
-				Character underscore = new  Character('_');
+				String underscore = "_ ";
 				boolean ifWrong = false;
 				
 				for(int i = 0; i < wordGuessedSoFar.size(); i++) {
-					System.out.println(wordGuessedSoFar.get(i));
 
 					if(underscore.equals(wordGuessedSoFar.get(i))) {
 
@@ -315,30 +319,30 @@ public class Slutprojekt {
 			public static void playAgain() {
 				System.out.println("Vill du spela igen?");
 				System.out.println("Tryck 1. för NEJ");
-				System.out.println("Tryck 2. för JA");
-				System.out.println("tryck 3 för att byta svårighetsgrad");
+				System.out.println("tryck 2. för JA");
 				
+
 				try {
-					chooseAgain = input.nextInt();
+					String tempString = input.nextLine();
+					chooseAgain = Integer.parseInt(tempString);
+					
 				}
-				catch(InputMismatchException k) {
+				
+				catch(NumberFormatException k) {
 					System.out.println("Testa att skriva en siffra istället");
 					playAgain();
-
-				}
-				
+					return;
+				} 
 				
 				 if (chooseAgain == 1) {
 					System.exit(0);
 					
 				}
-					else if (chooseAgain == 2) {
-						clearLists();
-						playGame();
-					}
-					else if (chooseAgain == 3) {
+					
+				else if (chooseAgain == 2) {
 						clearLists();
 						startGame();
+						playGame();
 				}
 			}
 	
